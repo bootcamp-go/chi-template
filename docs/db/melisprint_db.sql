@@ -49,7 +49,7 @@ CREATE TABLE `products` (
     `product_code` varchar(25) NOT NULL,
     `description` text NOT NULL,
     `height` float NOT NULL,
-    `lenght` float NOT NULL,
+    `length` float NOT NULL,
     `width` float NOT NULL,
     `weight` float NOT NULL,
     `expiration_rate` float NOT NULL,
