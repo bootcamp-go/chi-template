@@ -54,7 +54,7 @@ CREATE TABLE `products` (
     `weight` float NOT NULL,
     `expiration_rate` float NOT NULL,
     `freezing_rate` float NOT NULL,
-    `recommended_freezing_temperature` float NOT NULL,
+    `recom_freez_temp` float NOT NULL,
     `seller_id` int(11) NOT NULL,
     `product_type_id` int(11) NOT NULL,
     PRIMARY KEY (`id`),

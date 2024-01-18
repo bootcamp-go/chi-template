@@ -44,7 +44,7 @@ INSERT INTO `sections` (`section_number`, `current_temperature`, `minimum_temper
 (9, 4, -7, 130, 100, 180, 9, 9),
 (10, -6, -10, 140, 110, 190, 10, 10);
 
-INSERT INTO `products` (`product_code`, `description`, `height`, `lenght`, `width`, `weight`, `expiration_rate`, `freezing_rate`, `recommended_freezing_temperature`, `seller_id`, `product_type_id`) VALUES
+INSERT INTO `products` (`product_code`, `description`, `height`, `lenght`, `width`, `weight`, `expiration_rate`, `freezing_rate`, `recom_freez_temp`, `seller_id`, `product_type_id`) VALUES
 ('P1001', 'Product 1', 10, 5, 8, 2, 0.1, 0.2, -5, 1, 1),
 ('P1002', 'Product 2', 12, 6, 9, 2.5, 0.15, 0.25, -6, 2, 2),
 ('P1003', 'Product 3', 14, 7, 10, 3, 0.2, 0.3, -7, 3, 3),
