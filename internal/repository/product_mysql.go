@@ -23,7 +23,7 @@ type ProductMysql struct {
 // FindAll returns all products from the database
 func (r *ProductMysql) FindAll() (products []internal.Product, err error) {
 	// execute the query
-	rows, err := r.db.Query("SELECT `p.id`, `p.product_code`, `p.description`, `p.height`, `p.length`, `p.width`, `p.weight`, `p.expiration_rate`, `p.freezing_rate`, `p.recom_freez_temp`, `p.product_type_id`, `p.seller_id` FROM `products` AS `p`")
+	rows, err := r.db.Query("SELECT p.`id`, p.`product_code`, p.`description`, p.`height`, p.`length`, p.`width`, p.`weight`, p.`expiration_rate`, p.`freezing_rate`, p.`recom_freez_temp`, p.`product_type_id`, p.`seller_id` FROM `products` AS `p`")
 	if err != nil {
 		return
 	}
@@ -53,7 +53,7 @@ func (r *ProductMysql) FindAll() (products []internal.Product, err error) {
 // FindByID returns a product from the database by its id
 func (r *ProductMysql) FindByID(id int) (product internal.Product, err error) {
 	// execute the query
-	row := r.db.QueryRow("SELECT `p.id`, `p.product_code`, `p.description`, `p.height`, `p.length`, `p.width`, `p.weight`, `p.expiration_rate`, `p.freezing_rate`, `p.recom_freez_temp`, `p.product_type_id`, `p.seller_id` FROM `products` AS `p` WHERE `p.id` = ?", id)
+	row := r.db.QueryRow("SELECT p.`id`, p.`product_code`, p.`description`, p.`height`, p.`length`, p.`width`, p.`weight`, p.`expiration_rate`, p.`freezing_rate`, p.`recom_freez_temp`, p.`product_type_id`, p.`seller_id` FROM `products` AS `p` WHERE p.`id` = ?", id)
 
 	// scan the row into the product
 	err = row.Scan(&product.ID, &product.ProductCode, &product.Description, &product.Height, &product.Length, &product.Width, &product.Weight, &product.ExpirationRate, &product.FreezingRate, &product.RecomFreezTemp, &product.ProductTypeID, &product.SellerID)

@@ -23,7 +23,7 @@ type BuyerMysql struct {
 // FindAll returns all buyers from the database
 func (r *BuyerMysql) FindAll() (buyers []internal.Buyer, err error) {
 	// execute the query
-	rows, err := r.db.Query("SELECT `b.id`, `b.card_number_id`, `b.first_name`, `b.last_name` FROM `buyers` AS `b`")
+	rows, err := r.db.Query("SELECT b.`id`, b.`card_number_id`, b.`first_name`, b.`last_name` FROM `buyers` AS `b`")
 	if err != nil {
 		return
 	}
@@ -53,7 +53,7 @@ func (r *BuyerMysql) FindAll() (buyers []internal.Buyer, err error) {
 // FindByID returns a buyer from the database by its id
 func (r *BuyerMysql) FindByID(id int) (buyer internal.Buyer, err error) {
 	// execute the query
-	row := r.db.QueryRow("SELECT `b.id`, `b.card_number_id`, `b.first_name`, `b.last_name` FROM `buyers` AS `b` WHERE `b.id` = ?", id)
+	row := r.db.QueryRow("SELECT b.`id`, b.`card_number_id`, b.`first_name`, b.`last_name` FROM `buyers` AS `b` WHERE b.`id` = ?", id)
 
 	// scan the row into the buyer
 	err = row.Scan(&buyer.ID, &buyer.CardNumberID, &buyer.FirstName, &buyer.LastName)

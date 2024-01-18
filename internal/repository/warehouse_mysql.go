@@ -23,7 +23,7 @@ type WarehouseMysql struct {
 // FindAll returns all warehouses from the database
 func (r *WarehouseMysql) FindAll() (warehouses []internal.Warehouse, err error) {
 	// execute the query
-	rows, err := r.db.Query("SELECT `w.id`, `w.warehouse_code`, `w.address`, `w.telephone`, `w.minimum_capacity`, `w.minimum_temperature` FROM `warehouses` AS `w`")
+	rows, err := r.db.Query("SELECT w.`id`, w.`warehouse_code`, w.`address`, w.`telephone`, w.`minimum_capacity`, w.`minimum_temperature` FROM `warehouses` AS `w`")
 	if err != nil {
 		return
 	}
@@ -53,7 +53,7 @@ func (r *WarehouseMysql) FindAll() (warehouses []internal.Warehouse, err error) 
 // FindByID returns a warehouse from the database by its id
 func (r *WarehouseMysql) FindByID(id int) (warehouse internal.Warehouse, err error) {
 	// execute the query
-	row := r.db.QueryRow("SELECT `w.id`, `w.warehouse_code`, `w.address`, `w.telephone`, `w.minimum_capacity`, `w.minimum_temperature` FROM `warehouses` AS `w` WHERE `w.id` = ?", id)
+	row := r.db.QueryRow("SELECT w.`id`, w.`warehouse_code`, w.`address`, w.`telephone`, w.`minimum_capacity`, w.`minimum_temperature` FROM `warehouses` AS `w` WHERE w.`id` = ?", id)
 
 	// scan the row into the warehouse
 	err = row.Scan(&warehouse.ID, &warehouse.WarehouseCode, &warehouse.Address, &warehouse.Telephone, &warehouse.MinimumCapacity, &warehouse.MinimumTemperature)
@@ -105,7 +105,7 @@ func (r *WarehouseMysql) Save(warehouse *internal.Warehouse) (err error) {
 func (r *WarehouseMysql) Update(warehouse *internal.Warehouse) (err error) {
 	// execute the query
 	_, err = r.db.Exec(
-		"UPDATE `warehouses` AS `w` SET `w.warehouse_code` = ?, `w.address` = ?, `w.telephone` = ?, `w.minimum_capacity` = ?, `w.minimum_temperature` = ? WHERE `w.id` = ?",
+		"UPDATE `warehouses` AS `w` SET w.`warehouse_code` = ?, w.`address` = ?, w.`telephone` = ?, w.`minimum_capacity` = ?, w.`minimum_temperature` = ? WHERE w.`id` = ?",
 		(*warehouse).WarehouseCode, (*warehouse).Address, (*warehouse).Telephone, (*warehouse).MinimumCapacity, (*warehouse).MinimumTemperature, (*warehouse).ID,
 	)
 	if err != nil {

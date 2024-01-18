@@ -23,7 +23,7 @@ type EmployeeMysql struct {
 // FindAll returns all employees from the database
 func (r *EmployeeMysql) FindAll() (employees []internal.Employee, err error) {
 	// execute the query
-	rows, err := r.db.Query("SELECT `e.id`, `e.card_number_id`, `e.first_name`, `e.last_name`, `e.warehouse_id` FROM `employees` AS `e`")
+	rows, err := r.db.Query("SELECT e.`id`, e.`card_number_id`, e.`first_name`, e.`last_name`, e.`warehouse_id` FROM `employees` AS `e`")
 	if err != nil {
 		return
 	}
@@ -53,7 +53,7 @@ func (r *EmployeeMysql) FindAll() (employees []internal.Employee, err error) {
 // FindByID returns a employee from the database by its id
 func (r *EmployeeMysql) FindByID(id int) (employee internal.Employee, err error) {
 	// execute the query
-	row := r.db.QueryRow("SELECT `e.id`, `e.card_number_id`, `e.first_name`, `e.last_name`, `e.warehouse_id` FROM `employees` AS `e` WHERE `e.id` = ?", id)
+	row := r.db.QueryRow("SELECT e.`id`, e.`card_number_id`, e.`first_name`, e.`last_name`, e.`warehouse_id` FROM `employees` AS `e` WHERE e.`id` = ?", id)
 
 	// scan the row into the employee
 	err = row.Scan(&employee.ID, &employee.CardNumberID, &employee.FirstName, &employee.LastName, &employee.WarehouseID)

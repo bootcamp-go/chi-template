@@ -23,7 +23,7 @@ type SectionMysql struct {
 // FindAll returns all sections from the database
 func (r *SectionMysql) FindAll() (sections []internal.Section, err error) {
 	// execute the query
-	rows, err := r.db.Query("SELECT `s.id`, `s.section_number`, `s.current_temperature`, `s.minimum_temperature`, `s.current_capacity`, `s.minimum_capacity`, `s.maximum_capacity`, `s.warehouse_id`, `s.product_type_id` FROM `sections` AS `s`")
+	rows, err := r.db.Query("SELECT s.`id`, s.`section_number`, s.`current_temperature`, s.`minimum_temperature`, s.`current_capacity`, s.`minimum_capacity`, s.`maximum_capacity`, s.`warehouse_id`, s.`product_type_id` FROM `sections` AS `s`")
 	if err != nil {
 		return
 	}
@@ -53,7 +53,7 @@ func (r *SectionMysql) FindAll() (sections []internal.Section, err error) {
 // FindByID returns a section from the database by its id
 func (r *SectionMysql) FindByID(id int) (section internal.Section, err error) {
 	// execute the query
-	row := r.db.QueryRow("SELECT `s.id`, `s.section_number`, `s.current_temperature`, `s.minimum_temperature`, `s.current_capacity`, `s.minimum_capacity`, `s.maximum_capacity`, `s.warehouse_id`, `s.product_type_id` FROM `sections` AS `s` WHERE `s.id` = ?", id)
+	row := r.db.QueryRow("SELECT s.`id`, s.`section_number`, s.`current_temperature`, s.`minimum_temperature`, s.`current_capacity`, s.`minimum_capacity`, s.`maximum_capacity`, s.`warehouse_id`, s.`product_type_id` FROM `sections` AS `s` WHERE s.`id` = ?", id)
 
 	// scan the row into the section
 	err = row.Scan(&section.ID, &section.SectionNumber, &section.CurrentTemperature, &section.MinimumTemperature, &section.CurrentCapacity, &section.MinimumCapacity, &section.MaximumCapacity, &section.WarehouseID, &section.ProductTypeID)

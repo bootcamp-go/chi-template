@@ -23,7 +23,7 @@ type SellerMysql struct {
 // FindAll returns all sellers from the database
 func (r *SellerMysql) FindAll() (sellers []internal.Seller, err error) {
 	// execute the query
-	rows, err := r.db.Query("SELECT `s.id`, `s.cid`, `c.company_name`, `c.address`, `c.telephone` FROM `sellers` AS `s`")
+	rows, err := r.db.Query("SELECT s.`id`, s.`cid`, s.`company_name`, s.`address`, s.`telephone` FROM `sellers` AS `s`")
 	if err != nil {
 		return
 	}
@@ -53,7 +53,7 @@ func (r *SellerMysql) FindAll() (sellers []internal.Seller, err error) {
 // FindByID returns a seller from the database by its id
 func (r *SellerMysql) FindByID(id int) (seller internal.Seller, err error) {
 	// execute the query
-	row := r.db.QueryRow("SELECT `s.id`, `s.cid`, `c.company_name`, `c.address`, `c.telephone` FROM `sellers` AS `s` WHERE `s.id` = ?", id)
+	row := r.db.QueryRow("SELECT s.`id`, s.`cid`, s.`company_name`, s.`address`, s.`telephone` FROM `sellers` AS `s` WHERE s.`id` = ?", id)
 
 	// scan the row into the seller
 	err = row.Scan(&seller.ID, &seller.CID, &seller.CompanyName, &seller.Address, &seller.Telephone)
