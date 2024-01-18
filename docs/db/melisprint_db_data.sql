@@ -57,25 +57,25 @@ INSERT INTO `products` (`product_code`, `description`, `height`, `lenght`, `widt
 ('P1010', 'Product 10', 28, 14, 17, 6.5, 0.55, 0.65, -14, 10, 10);
 
 INSERT INTO `employees` (`card_number_id`, `first_name`, `last_name`, `warehouse_id`) VALUES
-('E1001', 'John', 'Doe', 1),
-('E1002', 'Jane', 'Smith', 2),
-('E1003', 'Michael', 'Johnson', 3),
-('E1004', 'Emily', 'Davis', 4),
-('E1005', 'David', 'Miller', 5),
-('E1006', 'Sarah', 'Wilson', 6),
-('E1007', 'Robert', 'Moore', 7),
-('E1008', 'Jennifer', 'Taylor', 8),
-('E1009', 'William', 'Anderson', 9),
-('E1010', 'Jessica', 'Thomas', 10);
+(1001, 'John', 'Doe', 1),
+(1002, 'Jane', 'Smith', 2),
+(1003, 'Michael', 'Johnson', 3),
+(1004, 'Emily', 'Davis', 4),
+(1005, 'David', 'Miller', 5),
+(1006, 'Sarah', 'Wilson', 6),
+(1007, 'Robert', 'Moore', 7),
+(1008, 'Jennifer', 'Taylor', 8),
+(1009, 'William', 'Anderson', 9),
+(1010, 'Jessica', 'Thomas', 10);
 
 INSERT INTO `buyers` (`card_number_id`, `first_name`, `last_name`) VALUES
-('B1001', 'Alice', 'Brown'),
-('B1002', 'Mark', 'Jones'),
-('B1003', 'Linda', 'Garcia'),
-('B1004', 'Brian', 'Williams'),
-('B1005', 'Susan', 'Martinez'),
-('B1006', 'Richard', 'Lee'),
-('B1007', 'Karen', 'Harris'),
-('B1008', 'Steven', 'Clark'),
-('B1009', 'Betty', 'Lopez'),
-('B1010', 'Edward', 'Gonzalez');
+(1001, 'Alice', 'Brown'),
+(1002, 'Mark', 'Jones'),
+(1003, 'Linda', 'Garcia'),
+(1004, 'Brian', 'Williams'),
+(1005, 'Susan', 'Martinez'),
+(1006, 'Richard', 'Lee'),
+(1007, 'Karen', 'Harris'),
+(1008, 'Steven', 'Clark'),
+(1009, 'Betty', 'Lopez'),
+(1010, 'Edward', 'Gonzalez');

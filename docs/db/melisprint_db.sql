@@ -64,7 +64,7 @@ CREATE TABLE `products` (
 -- table `employees`
 CREATE TABLE `employees` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `card_number_id` varchar(25) NOT NULL,
+    `card_number_id` int(11) NOT NULL,
     `first_name` varchar(50) NOT NULL,
     `last_name` varchar(50) NOT NULL,
     `warehouse_id` int(11) NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE `employees` (
 -- table `buyers`
 CREATE TABLE `buyers` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `card_number_id` varchar(25) NOT NULL,
+    `card_number_id` int(11) NOT NULL,
     `first_name` varchar(50) NOT NULL,
     `last_name` varchar(50) NOT NULL,
     PRIMARY KEY (`id`),
