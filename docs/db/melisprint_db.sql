@@ -12,7 +12,8 @@ CREATE TABLE `sellers` (
     `company_name` varchar(255) NOT NULL,
     `address` varchar(255) NOT NULL,
     `telephone` varchar(15) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_sellers_cid` (`cid`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- table `warehouses`
@@ -23,7 +24,8 @@ CREATE TABLE `warehouses` (
     `telephone` varchar(15) NOT NULL,
     `minimum_capacity` int NOT NULL,
     `minimum_temperature` float NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_warehouses_warehouse_code` (`warehouse_code`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- table `sections`
@@ -37,7 +39,8 @@ CREATE TABLE `sections` (
     `maximum_capacity` int NOT NULL,
     `warehouse_id` int(11) NOT NULL,
     `product_type_id` int(11) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_sections_section_number` (`section_number`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- table `products`
@@ -54,7 +57,8 @@ CREATE TABLE `products` (
     `recommended_freezing_temperature` float NOT NULL,
     `seller_id` int(11) NOT NULL,
     `product_type_id` int(11) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_products_product_code` (`product_code`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- table `employees`
@@ -64,7 +68,8 @@ CREATE TABLE `employees` (
     `first_name` varchar(50) NOT NULL,
     `last_name` varchar(50) NOT NULL,
     `warehouse_id` int(11) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_employees_card_number_id` (`card_number_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 -- table `buyers`
@@ -73,5 +78,6 @@ CREATE TABLE `buyers` (
     `card_number_id` varchar(25) NOT NULL,
     `first_name` varchar(50) NOT NULL,
     `last_name` varchar(50) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_buyers_card_number_id` (`card_number_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
