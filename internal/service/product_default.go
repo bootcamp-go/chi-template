@@ -1,6 +1,6 @@
 package service
 
-import "github.com/usuario/repositorio/internal"
+import "github.com/bootcamp-go/w12-app/internal"
 
 // NewProductDefault creates a new instance of the product service
 func NewProductDefault(rp internal.ProductRepository) *ProductDefault {

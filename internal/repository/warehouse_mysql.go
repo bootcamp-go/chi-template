@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/usuario/repositorio/internal"
+	"github.com/bootcamp-go/w12-app/internal"
 
 	"github.com/go-sql-driver/mysql"
 )

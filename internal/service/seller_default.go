@@ -1,6 +1,6 @@
 package service
 
-import "github.com/usuario/repositorio/internal"
+import "github.com/bootcamp-go/w12-app/internal"
 
 // NewSellerDefault creates a new instance of the seller service
 func NewSellerDefault(rp internal.SellerRepository) *SellerDefault {

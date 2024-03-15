@@ -3,8 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/usuario/repositorio/internal/application"
-
+	"github.com/bootcamp-go/w12-app/internal/application"
 	"github.com/go-sql-driver/mysql"
 )
 

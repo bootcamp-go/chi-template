@@ -1,6 +1,6 @@
 package service
 
-import "github.com/usuario/repositorio/internal"
+import "github.com/bootcamp-go/w12-app/internal"
 
 // NewEmployeeDefault creates a new instance of the employee service
 func NewEmployeeDefault(rp internal.EmployeeRepository) *EmployeeDefault {

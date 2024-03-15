@@ -1,6 +1,6 @@
 package service
 
-import "github.com/usuario/repositorio/internal"
+import "github.com/bootcamp-go/w12-app/internal"
 
 // NewSectionDefault creates a new instance of the section service
 func NewSectionDefault(rp internal.SectionRepository) *SectionDefault {

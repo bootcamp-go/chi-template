@@ -1,4 +1,4 @@
-module github.com/usuario/repositorio
+module github.com/bootcamp-go/w12-app
 
 go 1.21
 

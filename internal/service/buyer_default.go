@@ -1,6 +1,6 @@
 package service
 
-import "github.com/usuario/repositorio/internal"
+import "github.com/bootcamp-go/w12-app/internal"
 
 // NewBuyerDefault creates a new instance of the buyer service
 func NewBuyerDefault(rp internal.BuyerRepository) *BuyerDefault {

@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/usuario/repositorio/internal"
+	"github.com/bootcamp-go/w12-app/internal"
 )
 
 // NewWarehouseDefault creates a new instance of the warehouse handler
