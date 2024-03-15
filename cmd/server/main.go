@@ -16,7 +16,7 @@ func main() {
 	addrCfg := ":8080"
 	mysqlCfg := mysql.Config{
 		User:      "melisprint_user",
-		Passwd:    "melisprint_pass",
+		Passwd:    "MeLiSprint_Pass_123!",
 		Net:       "tcp",
 		Addr:      "localhost:3306",
 		DBName:    "melisprint",

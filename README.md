@@ -15,9 +15,9 @@ Instalar directamente desde intelligent hub. Parte de las reglas de MeLi
    - Ejecuta `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`.
    - Sigue las instrucciones en pantalla para completar la instalación.
 2. **Instalar MySQL:**
-   - Una vez instalado Homebrew, ejecuta `brew install mysql`.
+   - Una vez instalado Homebrew, ejecuta `brew install mysql@8.0`.
 3. **Iniciar el Servicio de MySQL:**
-   - Ejecuta `brew services start mysql`.
+   - Ejecuta `brew services start mysql@8.0`.
 4. **Configurar MySQL:**
    - Ejecuta `mysql_secure_installation`.
    - Sigue las instrucciones para configurar tu instalación de MySQL.
