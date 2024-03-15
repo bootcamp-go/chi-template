@@ -7,6 +7,9 @@ TRUNCATE TABLE `products`;
 TRUNCATE TABLE `employees`;
 TRUNCATE TABLE `buyers`;
 
+DELETE FROM `locality`;
+ALTER TABLE `locality` AUTO_INCREMENT = 1;
+
 -- DML
 INSERT INTO `sellers` (`cid`, `company_name`, `address`, `telephone`) VALUES
 (1, 'Company A', '123 Main St', '123-456-7890'),
